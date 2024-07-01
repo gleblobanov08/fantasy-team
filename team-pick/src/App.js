@@ -8,9 +8,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={PlayerList} />
-        <Route path="/team-selection" component={TeamSelection} />
-        <Route path="/results" component={Results} />
+        <Route path="/" element={<PlayerList/>} />
+        <Route path="/team-selection" element={<TeamSelection />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </Router>
   );

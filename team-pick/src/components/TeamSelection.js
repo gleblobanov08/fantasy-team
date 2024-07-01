@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-const players = [
-  { id: 1, name: 'Player 1', position: 'Keeper', price: 10, team: 'Germany' },
-  { id: 2, name: 'Player 2', position: 'Defender', price: 8, team: 'France' },
-  // Add more players here...
-];
+import players from '../data/players';
 
 function TeamSelection() {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
@@ -13,10 +8,10 @@ function TeamSelection() {
 
   const addPlayer = (player) => {
     const newSelectedPlayers = [...selectedPlayers, player];
-    const keeperCount = newSelectedPlayers.filter(p => p.position === 'Keeper').length;
+    const keeperCount = newSelectedPlayers.filter(p => p.position === 'Goalkeeper').length;
     const defenderCount = newSelectedPlayers.filter(p => p.position === 'Defender').length;
     const midfielderCount = newSelectedPlayers.filter(p => p.position === 'Midfielder').length;
-    const strikerCount = newSelectedPlayers.filter(p => p.position === 'Striker').length;
+    const strikerCount = newSelectedPlayers.filter(p => p.position === 'Forward').length;
 
     if (keeperCount > 2) {
       setError('You can only select 2 keepers');

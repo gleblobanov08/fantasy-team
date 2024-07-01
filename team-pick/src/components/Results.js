@@ -1,24 +1,19 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
-const playerPoints = {
-  1: 5, // Player 1
-  2: 3, // Player 2
-  // Add points for more players here...
-};
+import playerPoints from '../data/playerPoints';
 
 function Results() {
   const location = useLocation();
   const { selectedPlayers } = location.state;
-  const totalPoints = selectedPlayers.reduce((total, player) => total + (playerPoints[player.id] || 0), 0);
+  const totalPoints = selectedPlayers.reduce((total, player) => total + (playerPoints[player.name] || 0), 0);
 
   return (
     <div>
       <h1>Results</h1>
       <ul>
         {selectedPlayers.map(player => (
-          <li key={player.id}>
-            {player.name} - {player.position} - {player.team} - Points: {playerPoints[player.id] || 0}
+          <li key={player.name}>
+            {player.name} - {player.position} - {player.team} - Points: {playerPoints[player.name] || 0}
           </li>
         ))}
       </ul>
