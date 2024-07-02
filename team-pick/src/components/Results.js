@@ -13,7 +13,7 @@ function Results() {
       <ul>
         {selectedPlayers.map(player => (
           <li key={player.name}>
-            {player.name} - {player.position} - {player.team} - Points: {playerPoints[player.name] || 0}
+            {player.name} - {player.position} - {player.country} - Points: {playerPoints[player.name] || 0}
           </li>
         ))}
       </ul>

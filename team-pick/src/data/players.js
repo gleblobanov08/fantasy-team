@@ -9,7 +9,7 @@ const players = [
         name: 'Antonio Rudiger',
         country: 'Germany',
         position: 'Defender',
-        price: 6
+        price:16
     },
     {
         name: 'Jamal Musiala',
