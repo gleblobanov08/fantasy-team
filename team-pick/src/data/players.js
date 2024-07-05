@@ -3,13 +3,43 @@ const players = [
         name: 'Manuel Neuer',
         country: 'Germany',
         position: 'Goalkeeper',
-        price: 8
+        price: 5
+    },
+    {
+        name: 'Marc-Andre ter Stegen',
+        country: 'Germany',
+        position: 'Goalkeeper',
+        price: 5
+    },
+    {
+        name: 'Oliver Baumann',
+        country: 'Germany',
+        position: 'Goalkeeper',
+        price: 5
+    },
+    {
+        name: 'Joshua Kimmich',
+        country: 'Germany',
+        position: 'Defender',
+        price: 6
+    },
+    {
+        name: 'Nico Schlotterbeck',
+        country: 'Germany',
+        position: 'Defender',
+        price: 6
     },
     {
         name: 'Antonio Rudiger',
         country: 'Germany',
         position: 'Defender',
-        price:16
+        price: 5
+    },
+    {
+        name: 'Jonathan Tah',
+        country: 'Germany',
+        position: 'Defender',
+        price: 5
     },
     {
         name: 'Jamal Musiala',
