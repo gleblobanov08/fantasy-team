@@ -1,6 +1,7 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import playerPoints from '../data/playerPoints';
+import '../styles/Components.css';
 
 function Results() {
   const location = useLocation();
@@ -10,14 +11,17 @@ function Results() {
   return (
     <div>
       <h1>Results</h1>
-      <ul>
         {selectedPlayers.map(player => (
-          <li key={player.name}>
-            {player.name} - {player.position} - {player.country} - Points: {playerPoints[player.name] || 0}
-          </li>
+          <div key={player.name} className='table'>
+            <div>{player.name}</div>
+            <div>{player.position}</div>
+            <div>{player.country}</div>
+            <div>Points:</div>
+            <div>{playerPoints[player.name] || 0}</div>
+          </div>
         ))}
-      </ul>
       <h2>Total Points: {totalPoints}</h2>
+      <Link to="/">Go to home</Link>
     </div>
   );
 }

@@ -1,8 +1,5 @@
 body {
-  background-image: url('../assets/small-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: green;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -14,11 +11,6 @@ body {
 }
 
 /* Background for larger screens (e.g., laptops) */
-@media (min-width: 768px) {
-  body {
-    background-image: url('../assets/big-bg.jpeg');
-  }
-}
 
 ul li {
     list-style-type: none;

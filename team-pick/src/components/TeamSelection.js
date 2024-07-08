@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import players from '../data/players';
+import '../styles/Components.css';
 
 function TeamSelection() {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [error, setError] = useState('');
+  const [filteredPlayers, setFilteredPlayers] = useState(players);
+  const [position, setPosition] = useState('');
+
+  useEffect(() => {
+    if (position) {
+      setFilteredPlayers(players.filter(player => player.position === position));
+    } else {
+      setFilteredPlayers(players);
+    }
+  }, [position]);
+
 
   const addPlayer = (player) => {
     const newSelectedPlayers = [...selectedPlayers, player];
@@ -84,132 +96,49 @@ function TeamSelection() {
   return (
     <div>
       <h1>Team Selection</h1>
-      <ul>
-        {players.map(player => (
-          <li key={player.name}>
-            {player.name} - {player.position} - {player.country} - ${player.price}
-            <button onClick={() => addPlayer(player)} disabled={isAddDisabled(player)} style={{ backgroundColor: isAddDisabled(player) ? 'grey' : 'lightgreen', borderRadius: '10px' }}>
-              Add
-            </button>
-          </li>
+      <select onChange={(e) => setPosition(e.target.value)}>
+        <option value="">All</option>
+        <option value="Goalkeeper">Keepers</option>
+        <option value="Defender">Defenders</option>
+        <option value="Midfielder">Midfielders</option>
+        <option value="Forward">Strikers</option>
+      </select>
+
+        {filteredPlayers.map(player => (
+          <div key={player.name} className='table'>
+            <div>{player.name}</div> 
+            <div>{player.position}</div>
+            <div>{player.country}</div>
+            <div>{player.price}</div>
+            <div>
+              <button onClick={() => addPlayer(player)} disabled={isAddDisabled(player)} style={{ backgroundColor: isAddDisabled(player) ? 'grey' : 'lightgreen'}}>
+                +
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
       <h2>Selected Players</h2>
-      <ul>
         {selectedPlayers.map(player => (
-          <li key={player.name}>
-            {player.name} - {player.position} - {player.country} - ${player.price}
-            <button onClick={() => removePlayer(player)}>Remove</button>
-          </li>
+          <div className='table'>
+            <div>{player.name}</div>
+            <div>{player.position}</div>
+            <div>{player.country}</div>
+            <div>{player.price}</div>
+            <div>
+              <button onClick={() => removePlayer(player)} className='remove'>
+                X
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <p>Total Price: ${selectedPlayers.reduce((total, player) => total + player.price, 0)}</p>
-      <Link to="/results" state={{ selectedPlayers }}>See Results</Link>
+      <div className='links'>
+        <Link to="/">Go back</Link>
+        <Link to="/results" state={{ selectedPlayers }}>See Results</Link>
+      </div>
     </div>
   );
 }
 
 export default TeamSelection
-
-/*
-
-    if (playerCount > 15) {
-      setError('You can only select 15 players');
-      return;
-    }
-    if (totalPrice > 100) {
-      setError('The total price of selected players cannot exceed 100');
-      return;
-    }
-    if (teamCount > 2) {
-      setError(`You can only select up to 2 players from the same team (${player.team})`);
-      return;
-    }
-    if (keeperCount > 2) {
-      setError('You can only select 2 keepers');
-      return;
-    }
-    if (defenderCount > 5) {
-      setError('You can only select 5 defenders');
-      return;
-    }
-    if (midfielderCount > 5) {
-      setError('You can only select 5 midfielders');
-      return;
-    }
-    if (strikerCount > 5) {
-      setError('You can only select 5 strikers');
-      return;
-    }
-    if (selectedPlayers.find(p => p.id === player.id)) {
-      setError('You cannot select the same player twice');
-      return;
-    }
-
-    setSelectedPlayers(newSelectedPlayers);
-    setError('');
-  };
-
-  const removePlayer = (player) => {
-    setSelectedPlayers(selectedPlayers.filter(p => p.id !== player.id));
-  };
-
-  const isAddDisabled = (player) => {
-    const newSelectedPlayers = [...selectedPlayers, player];
-    const playerCount = newSelectedPlayers.length;
-    const totalPrice = newSelectedPlayers.reduce((total, p) => total + p.price, 0);
-    const teamCount = newSelectedPlayers.filter(p => p.team === player.team).length;
-
-    const keeperCount = newSelectedPlayers.filter(p => p.position === 'Keeper').length;
-    const defenderCount = newSelectedPlayers.filter(p => p.position === 'Defender').length;
-    const midfielderCount = newSelectedPlayers.filter(p => p.position === 'Midfielder').length;
-    const strikerCount = newSelectedPlayers.filter(p => p.position === 'Striker').length;
-
-    return (
-      playerCount > 15 ||
-      totalPrice > 100 ||
-      teamCount > 2 ||
-      keeperCount > 2 ||
-      defenderCount > 5 ||
-      midfielderCount > 5 ||
-      strikerCount > 5 ||
-      selectedPlayers.find(p => p.id === player.id)
-    );
-  };
-
-  return (
-    <div>
-      <h1>Team Selection</h1>
-      <ul>
-        {players.map(player => (
-          <li key={player.id}>
-            {player.name} - {player.position} - {player.team} - ${player.price}
-            <button
-              onClick={() => addPlayer(player)}
-              disabled={isAddDisabled(player)}
-              style={{ backgroundColor: isAddDisabled(player) ? 'grey' : 'blue' }}
-            >
-              Add
-            </button>
-          </li>
-        ))}
-      </ul>
-      <h2>Selected Players</h2>
-      <ul>
-        {selectedPlayers.map(player => (
-          <li key={player.id}>
-            {player.name} - {player.position} - {player.team} - ${player.price}
-            <button onClick={() => removePlayer(player)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <p>Total Price: ${selectedPlayers.reduce((total, player) => total + player.price, 0)}</p>
-      <Link to="/results" state={{ selectedPlayers }}>See Results</Link>
-    </div>
-  );
-}
-
-export default TeamSelection;
-*/
