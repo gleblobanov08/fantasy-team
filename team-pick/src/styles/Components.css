@@ -1,28 +1,86 @@
-.table {
-    display: grid;
-    grid-template-columns: 35% 25% 25% 10% 5%;
-    width: 50%;
-    background: rgba(222, 222, 222, 0.5);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
-
 button {
     border: none;
     border-radius: 10px;
     outline: none;
-    text-align: center;
     font-weight: bold;
     color: white;
 }
 .remove {
     background-color: red;
 }
+
+.remove:hover {
+    background-color: orange;
+}
+
+.homepage {
+    margin-top: 50px;
+    flex: 1;
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+}
+
+.team-selection {
+    width: 60vw;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    h1 {
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+    }
+    button.add {
+        background-color: lightgreen;
+    }
+    button.add:hover {
+        background-color: green;
+    }
+    button.add:disabled {
+        background-color: grey;
+    }
+    p {
+        font-size: 1.2em;
+    }
+    .error {
+        color: red;
+    }
+}
+
+.results {
+    width: 60vw;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    h1 {
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+}
+
 .groups {
-    width: 50%;
+    width: 40vw;
     margin: 30px auto;
-    padding: 25px;
     display: block;
 }
 .links {
@@ -30,13 +88,45 @@ button {
     justify-content: space-around;
 }
 
-a {
+.btn {
+    margin-bottom: 15px;
     padding: 12px 20px;
     text-decoration: none;
-    background-color: lightslategray;
-    border-radius: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
     color: white;
 }
-a:hover {
-    background-color: rgb(105, 158, 51);
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .table-cell {
+        display: grid;
+        grid-template-columns: repeat(3, 3fr) repeat(2, 1fr);
+    }
+}
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        margin: 0 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button.active {
+        background-color: #0056b3;
+    }
+    button:hover:not(.active) {
+        background-color: #0056b3;
+    }
 }

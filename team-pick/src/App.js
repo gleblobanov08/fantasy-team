@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TeamSelection from './components/TeamSelection';
 import Results from './components/Results';
-import './styles/App.css';
 import HomePage from './components/HomePage';
+import './styles/App.css';
 
 function App() {
   return (

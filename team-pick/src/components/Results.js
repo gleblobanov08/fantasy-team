@@ -9,10 +9,11 @@ function Results() {
   const totalPoints = selectedPlayers.reduce((total, player) => total + (playerPoints[player.name] || 0), 0);
 
   return (
-    <div>
+    <div className='results'>
       <h1>Results</h1>
+      <div className='table'>
         {selectedPlayers.map(player => (
-          <div key={player.name} className='table'>
+          <div key={player.name} className='table-cell'>
             <div>{player.name}</div>
             <div>{player.position}</div>
             <div>{player.country}</div>
@@ -20,8 +21,9 @@ function Results() {
             <div>{playerPoints[player.name] || 0}</div>
           </div>
         ))}
-      <h2>Total Points: {totalPoints}</h2>
-      <Link to="/">Go to home</Link>
+      </div>
+      <p>Total Points: {totalPoints}</p>
+      <Link to="/" className='btn'>Go to home</Link>
     </div>
   );
 }
