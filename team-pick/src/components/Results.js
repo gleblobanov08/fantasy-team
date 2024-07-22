@@ -23,7 +23,7 @@ function Results() {
         ))}
       </div>
       <p>Total Points: {totalPoints}</p>
-      <Link to="/" className='btn'>Go to home</Link>
+      <Link to="/" className='btn'>Go home</Link>
     </div>
   );
 }

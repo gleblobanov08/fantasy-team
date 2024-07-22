@@ -114,6 +114,12 @@ const players = [
         price: 5
     },
     {
+        name: 'Granit Xhaka',
+        country: 'Switzerland',
+        position: 'Midfielder',
+        price: 6
+    },
+    {
         name: 'Michel Aebischer',
         country: 'Switzerland',
         position: 'Midfielder',
@@ -136,12 +142,6 @@ const players = [
         country: 'Switzerland',
         position: 'Midfielder',
         price: 5
-    },
-    {
-        name: 'Granit Xhaka',
-        country: 'Switzerland',
-        position: 'Midfielder',
-        price: 6
     },
     {
         name: 'Fabian Rieder',
@@ -174,6 +174,12 @@ const players = [
         price: 6
     },
     {
+        name: 'Robin Le Normand',
+        country: 'Spain',
+        position: 'Defender',
+        price: 6
+    },
+    {
         name: 'Marc Cucurella',
         country: 'Spain',
         position: 'Defender',
@@ -186,28 +192,34 @@ const players = [
         price: 5
     },
     {
-        name: 'Robin Le Normand',
-        country: 'Spain',
-        position: 'Defender',
-        price: 6
-    },
-    {
-        name: 'Nacho Fernandez',
+        name: 'Aymeric Laporte',
         country: 'Spain',
         position: 'Defender',
         price: 5
     },
     {
-        name: 'Dani Olmo',
+        name: 'Rodri',
         country: 'Spain',
         position: 'Midfielder',
-        price: 6
+        price: 8
     },
     {
         name: 'Lamine Yamal',
         country: 'Spain',
         position: 'Midfielder',
         price: 7
+    },
+    {
+        name: 'Pedri',
+        country: 'Spain',
+        position: 'Midfielder',
+        price: 7
+    },
+    {
+        name: 'Dani Olmo',
+        country: 'Spain',
+        position: 'Midfielder',
+        price: 6
     },
     {
         name: 'Fabian Ruiz',
@@ -217,18 +229,6 @@ const players = [
     },
     {
         name: 'Nico Williams',
-        country: 'Spain',
-        position: 'Midfielder',
-        price: 6
-    },
-    {
-        name: 'Rodri',
-        country: 'Spain',
-        position: 'Midfielder',
-        price: 8
-    },
-    {
-        name: 'Mikel Merino',
         country: 'Spain',
         position: 'Midfielder',
         price: 6
@@ -244,12 +244,6 @@ const players = [
         country: 'Spain',
         position: 'Midfielder',
         price: 6
-    },
-    {
-        name: 'Pedri',
-        country: 'Spain',
-        position: 'Midfielder',
-        price: 7
     },
     {
         name: 'Alvaro Morata',
@@ -282,16 +276,16 @@ const players = [
         price: 6
     },
     {
-        name: 'Giovanni Di Lorenzo',
-        country: 'Italy',
-        position: 'Defender',
-        price: 5
-    },
-    {
         name: 'Federico Dimarco',
         country: 'Italy',
         position: 'Defender',
         price: 6
+    },
+    {
+        name: 'Giovanni Di Lorenzo',
+        country: 'Italy',
+        position: 'Defender',
+        price: 5
     },
     {
         name: 'Matteo Darmian',
@@ -312,28 +306,28 @@ const players = [
         price: 6
     },
     {
-        name: 'Lorenzo Pellegrini',
-        country: 'Italy',
-        position: 'Midfielder',
-        price: 5
-    },
-    {
         name: 'Federico Chiesa',
         country: 'Italy',
         position: 'Midfielder',
         price: 6
     },
     {
-        name: 'Jorginho',
+        name: 'Davide Frattesi',
+        country: 'Italy',
+        position: 'Midfielder',
+        price: 6
+    },
+    {
+        name: 'Lorenzo Pellegrini',
         country: 'Italy',
         position: 'Midfielder',
         price: 5
     },
     {
-        name: 'Davide Frattesi',
+        name: 'Jorginho',
         country: 'Italy',
         position: 'Midfielder',
-        price: 6
+        price: 5
     },
     {
         name: 'Gianluca Scamacca',
@@ -354,30 +348,6 @@ const players = [
         price: 6
     },
     {
-        name: 'John Stones',
-        country: 'England',
-        position: 'Defender',
-        price: 6
-    },
-    {
-        name: 'Kyle Walker',
-        country: 'England',
-        position: 'Defender',
-        price: 5
-    },
-    {
-        name: 'Marc Guehi',
-        country: 'England',
-        position: 'Defender',
-        price: 6
-    },
-    {
-        name: 'Kieran Trippier',
-        country: 'England',
-        position: 'Defender',
-        price: 5
-    },
-    {
         name: 'Trent Alexander-Arnold',
         country: 'England',
         position: 'Defender',
@@ -390,16 +360,34 @@ const players = [
         price: 6
     },
     {
+        name: 'John Stones',
+        country: 'England',
+        position: 'Defender',
+        price: 6
+    },
+    {
+        name: 'Marc Guehi',
+        country: 'England',
+        position: 'Defender',
+        price: 6
+    },
+    {
+        name: 'Kyle Walker',
+        country: 'England',
+        position: 'Defender',
+        price: 5
+    },
+    {
+        name: 'Kierran Trippier',
+        country: 'England',
+        position: 'Defender',
+        price: 5
+    },
+    {
         name: 'Jude Bellingham',
         country: 'England',
         position: 'Midfielder',
         price: 9
-    },
-    {
-        name: 'Declan Rice',
-        country: 'England',
-        position: 'Midfielder',
-        price: 8
     },
     {
         name: 'Bukayo Saka',
@@ -414,10 +402,10 @@ const players = [
         price: 9
     },
     {
-        name: 'Kobbie Mainoo',
+        name: 'Declan Rice',
         country: 'England',
         position: 'Midfielder',
-        price: 6
+        price: 8
     },
     {
         name: 'Cole Palmer',
@@ -426,7 +414,7 @@ const players = [
         price: 7
     },
     {
-        name: 'Connor Gallagher',
+        name: 'Kobbie Mainoo',
         country: 'England',
         position: 'Midfielder',
         price: 6
@@ -442,12 +430,6 @@ const players = [
         country: 'England',
         position: 'Forward',
         price: 7
-    },
-    {
-        name: 'Ivan Toney',
-        country: 'England',
-        position: 'Forward',
-        price: 6
     },
     {
         name: 'Kasper Schmeichel',
@@ -547,7 +529,7 @@ const players = [
     },
     {
         name: 'Zan Karnicnik',
-        country: 'Denmark',
+        country: 'Slovenia',
         position: 'Defender',
         price: 5
     },
@@ -660,12 +642,6 @@ const players = [
         price: 6
     },
     {
-        name: 'Youssouf Fofana',
-        country: 'France',
-        position: 'Midfielder',
-        price: 6
-    },
-    {
         name: "N'Golo Kante",
         country: 'France',
         position: 'Midfielder',
@@ -696,19 +672,7 @@ const players = [
         price: 6
     },
     {
-        name: 'Bradley Barcola',
-        country: 'France',
-        position: 'Forward',
-        price: 6
-    },
-    {
         name: 'Antoine Griezmann',
-        country: 'France',
-        position: 'Forward',
-        price: 5
-    },
-    {
-        name: 'Olivier Giroud',
         country: 'France',
         position: 'Forward',
         price: 5
@@ -786,12 +750,6 @@ const players = [
         price: 5
     },
     {
-        name: 'Florian Grillitsch',
-        country: 'Austria',
-        position: 'Midfielder',
-        price: 5
-    },
-    {
         name: 'Michael Gregoritsch',
         country: 'Austria',
         position: 'Forward',
@@ -822,12 +780,6 @@ const players = [
         price: 6
     },
     {
-        name: 'Jeremie Frimpong',
-        country: 'Netherlands',
-        position: 'Defender',
-        price: 6
-    },
-    {
         name: 'Virgil van Dijk',
         country: 'Netherlands',
         position: 'Defender',
@@ -841,12 +793,6 @@ const players = [
     },
     {
         name: 'Stefan de Vrij',
-        country: 'Netherlands',
-        position: 'Defender',
-        price: 5
-    },
-    {
-        name: 'Daley Blind',
         country: 'Netherlands',
         position: 'Defender',
         price: 5
@@ -888,25 +834,7 @@ const players = [
         price: 6
     },
     {
-        name: 'Joshua Zirkzee',
-        country: 'Netherlands',
-        position: 'Forward',
-        price: 6
-    },
-    {
-        name: 'Brian Brobbey',
-        country: 'Netherlands',
-        position: 'Forward',
-        price: 6
-    },
-    {
         name: 'Steven Bergvijn',
-        country: 'Netherlands',
-        position: 'Forward',
-        price: 5
-    },
-    {
-        name: 'Wout Weghorst',
         country: 'Netherlands',
         position: 'Forward',
         price: 5
@@ -966,7 +894,7 @@ const players = [
         price: 6
     },
     {
-        name: 'Cahrles de Ketelare',
+        name: 'Charles de Ketelare',
         country: 'Belgium',
         position: 'Midfielder',
         price: 6
@@ -1051,12 +979,6 @@ const players = [
     },
     {
         name: 'Laszlo Benes',
-        country: 'Slovakia',
-        position: 'Midfielder',
-        price: 5
-    },
-    {
-        name: 'Lukas Haraslin',
         country: 'Slovakia',
         position: 'Midfielder',
         price: 5
@@ -1326,12 +1248,6 @@ const players = [
         price: 5
     },
     {
-        name: 'Zeki Celik',
-        country: 'Turkiye',
-        position: 'Defender',
-        price: 5
-    },
-    {
         name: 'Samet Akaydin',
         country: 'Turkiye',
         position: 'Defender',
@@ -1356,25 +1272,7 @@ const players = [
         price: 6
     },
     {
-        name: 'Orkun Kokcu',
-        country: 'Turkiye',
-        position: 'Midfielder',
-        price: 6
-    },
-    {
-        name: 'Ismail Yuksek',
-        country: 'Turkiye',
-        position: 'Midfielder',
-        price: 5
-    },
-    {
         name: 'Salih Ozcan',
-        country: 'Turkiye',
-        position: 'Midfielder',
-        price: 5
-    },
-    {
-        name: 'Ifran Can Kahveci',
         country: 'Turkiye',
         position: 'Midfielder',
         price: 5
