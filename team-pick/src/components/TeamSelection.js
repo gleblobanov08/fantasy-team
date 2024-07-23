@@ -15,7 +15,7 @@ function TeamSelection() {
   const [filteredPlayers, setFilteredPlayers] = useState(players);
 
   let countries = ['Germany', 'Switzerland', 'Spain', 'Italy', 'England', 'Denmark', 'Slovenia', 'France',
-    'Netherlands', 'Austria', 'Belgium', 'Slovakia', 'Romania', 'Portugal', 'Turkey', 'Georgia'
+    'Netherlands', 'Austria', 'Belgium', 'Slovakia', 'Romania', 'Portugal', 'Turkiye', 'Georgia'
   ]
 
   const filterPlayers = () => {
@@ -36,7 +36,7 @@ function TeamSelection() {
 
   useEffect(() => {
     filterPlayers();
-  });
+}, [position, country]);
 
   const addPlayer = (player) => {
     const newSelectedPlayers = [...selectedPlayers, player];
@@ -150,7 +150,9 @@ function TeamSelection() {
           </div>
         ))}
       </div>
-      <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' color='primary' page={currentPage} onChange={paginate}/>
+      <div className='pagination'>
+      <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' page={currentPage} onChange={paginate}/>
+      </div>
       <h2>Selected Players</h2>
       <div className='table'>
         {selectedPlayers.map(player => (
