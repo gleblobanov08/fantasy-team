@@ -108,10 +108,10 @@ button {
     gap: 10px;
     .table-cell {
         display: grid;
-        grid-template-columns: repeat(3, 3fr) repeat(2, 1fr);
+        grid-template-columns: 3fr repeat(2, 2fr) repeat(2, 1fr);
     }
 }
-  .pagination {
+.pagination {
     text-align: center;
     margin-top: 20px;
     width: 100%;
@@ -125,5 +125,12 @@ button {
         border: none;
         border-radius: 5px;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .homepage, .team-selection, .results {
+        width: 90%;
+        font-size: 12px;
     }
 }

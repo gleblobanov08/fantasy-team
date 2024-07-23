@@ -151,7 +151,7 @@ function TeamSelection() {
         ))}
       </div>
       <div className='pagination'>
-      <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' page={currentPage} onChange={paginate}/>
+      <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' size='small' page={currentPage} onChange={paginate}/>
       </div>
       <h2>Selected Players</h2>
       <div className='table'>
