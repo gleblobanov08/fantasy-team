@@ -1,16 +1,21 @@
-button {
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    font-weight: bold;
-    color: white;
-}
-.remove {
-    background-color: red;
+@media screen and (max-width: 768px) {
+    .homepage, .team-selection, .results {
+        width: 90%;
+        font-size: 12px;
+    }
 }
 
-.remove:hover {
-    background-color: orange;
+@keyframes rotate {
+    from {
+        transform: rotate(-0.5turn);
+    }
+    to {
+        transfrom: rotate(0.5turn);
+    }
+}
+
+.bg {
+    height: 100vh;
 }
 
 .homepage {
@@ -78,29 +83,6 @@ button {
     }
 }
 
-.groups {
-    width: 50vw;
-    margin: 30px auto;
-    display: block;
-}
-.links {
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn {
-    margin-bottom: 15px;
-    padding: 12px 20px;
-    text-decoration: none;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-.btn:hover {
-    background-color: #0056b3;
-}
-
 .table {
     width: 100%;
     display: flex;
@@ -127,10 +109,60 @@ button {
         cursor: pointer;
     }
 }
-
-@media screen and (max-width: 768px) {
-    .homepage, .team-selection, .results {
-        width: 90%;
-        font-size: 12px;
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .load {
+        margin: 0.5em;
+        height: 1.5em;
+        width: 1.5em;
+        animation: rotate infinite 1.5s;
     }
+    .sq1 {
+        background: red;
+    }
+    .sq2 {
+        background: orange;
+    }
+    .sq3 {
+        background: blue;
+    }
+}
+
+.groups {
+    width: 50vw;
+    margin: 30px auto;
+    display: block;
+}
+.links {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    color: white;
+}
+.remove {
+    background-color: red;
+}
+.remove:hover {
+    background-color: orange;
+}
+
+.btn {
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.btn:hover {
+    background-color: #0056b3;
 }
