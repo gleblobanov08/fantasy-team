@@ -138,11 +138,11 @@ function TeamSelection() {
       <div className='table'>
         {currentPlayers.map(player => (
           <div key={player.name} className='table-cell'>
-            <div>{player.name}</div> 
-            <div>{player.position}</div>
-            <div>{player.country}</div>
-            <div>{player.price}</div>
-            <div>
+            <div className='name'>{player.name}</div> 
+            <div className='pos'>{player.position}</div>
+            <div className='country'>{player.country}</div>
+            <div className='price'>{player.price}</div>
+            <div className='click'>
               <button onClick={() => addPlayer(player)} disabled={isAddDisabled(player)} className='add'>
                 +
               </button>
@@ -153,25 +153,26 @@ function TeamSelection() {
       <div className='pagination'>
       <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' size='small' page={currentPage} onChange={paginate}/>
       </div>
-      <h2>Selected Players</h2>
-      <div className='table'>
-        {selectedPlayers.map(player => (
-          <div className='table-cell'>
-            <div>{player.name}</div>
-            <div>{player.position}</div>
-            <div>{player.country}</div>
-            <div>{player.price}</div>
-            <div>
-              <button onClick={() => removePlayer(player)} className='remove'>
-                X
-              </button>
+      <h2>Your team</h2>
+        {selectedPlayers.length === 0 && <p>You have no players rigth now</p>}
+        <div className='table'>
+          {selectedPlayers.map(player => (
+            <div className='table-cell'>
+              <div className='name'>{player.name}</div>
+              <div className='pos'>{player.position}</div>
+              <div className='country'>{player.country}</div>
+              <div className='price'>{player.price}</div>
+              <div className='click'>
+                <button onClick={() => removePlayer(player)} className='remove'>
+                  X
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      {error && <p className='error'>{error}</p>}
-      <p>Total Price: ${selectedPlayers.reduce((total, player) => total + player.price, 0)}</p>
-      <div className='links'>
+          ))}
+        </div>
+        {error && <p className='error'>{error}</p>}
+        <p>Total Price: ${selectedPlayers.reduce((total, player) => total + player.price, 0)}</p>
+        <div className='links'>
         <Link to="/" className='btn'>Go back</Link>
         {selectedPlayers.length === 15 && <Link to="/results" state={{ selectedPlayers }} className='btn'>See Results</Link>}
       </div>

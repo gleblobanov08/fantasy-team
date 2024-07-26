@@ -3,6 +3,32 @@
         width: 90%;
         font-size: 12px;
     }
+    .table-cell {
+        border: 1px solid #000;
+        border-radius: 10px;
+        grid-template-areas: 
+        "a a b c"
+        "d e b c";
+        grid-template-columns: 35% 35% 15% 15%;
+        justify-items: center;
+        align-items: center;
+        .name {
+            grid-area: a;
+            margin-bottom: 10px;
+        }
+        .pos {
+            grid-area: d;
+        }
+        .country {
+            grid-area: e;
+        }
+        .price {
+            grid-area: b;
+        }
+        .click {
+            grid-area: c;
+        }
+    }
 }
 
 @keyframes rotate {
@@ -72,7 +98,6 @@
     margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
-    flex: 1;
     background-color: rgba(0, 0, 0, 0.4);
     h1 {
         margin-bottom: 20px;
@@ -87,10 +112,22 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     .table-cell {
         display: grid;
         grid-template-columns: 3fr repeat(2, 2fr) repeat(2, 1fr);
+        padding: 10px;
+    }
+}
+.points-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .point-cell {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        text-align: left;
     }
 }
 .pagination {

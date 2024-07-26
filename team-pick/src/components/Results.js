@@ -23,20 +23,17 @@ function Results() {
           <Loader />
         ) : (
       <div className='results'>
-      <h1>Results</h1>
-      <div className='table'>
-        {selectedPlayers.map(player => (
-          <div key={player.name} className='table-cell'>
-            <div>{player.name}</div>
-            <div>{player.position}</div>
-            <div>{player.country}</div>
-            <div>Points:</div>
-            <div>{playerPoints[player.name] || 0}</div>
-          </div>
-        ))}
-      </div>
-      <p>Total Points: {totalPoints}</p>
-      <Link to="/" className='btn'>Go home</Link>
+        <h1>Results</h1>
+        <div className='points-table'>
+          {selectedPlayers.map(player => (
+            <div key={player.name} className='point-cell'>
+              <div>{player.name}</div>
+              <div>Points: {playerPoints[player.name] || 0}</div>
+            </div>
+          ))}
+        </div>
+        <p>Total Points: {totalPoints}</p>
+        <Link to="/" className='btn'>Go home</Link>
       </div>
       )}
     </div>
