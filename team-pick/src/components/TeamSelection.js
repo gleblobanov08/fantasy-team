@@ -154,7 +154,7 @@ function TeamSelection() {
       <Pagination count={Math.ceil(filteredPlayers.length / 10)} variant='outlined' size='small' page={currentPage} onChange={paginate}/>
       </div>
       <h2>Your team</h2>
-        {selectedPlayers.length === 0 && <p>You have no players rigth now</p>}
+        {selectedPlayers.length === 0 && <p>You have no players right now</p>}
         <div className='table'>
           {selectedPlayers.map(player => (
             <div className='table-cell'>
